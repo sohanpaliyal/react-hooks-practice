@@ -1,25 +1,64 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+// import StateAndEffect from "./hooks-component/StateAndEffect";
+// import UseMemo from "./hooks-component/UseMemo";
+import UseRef from './hooks-component/UseRef';
+import UseContext from './hooks-component/UseContext';
+import { ThemeProvider } from './hooks-component/ThemeContext';
+
+// export const ThemeContext  = React.createContext();
+
+
 
 function App() {
+ 
+  const [name , setName  ] = React.useState('')
+
+console.log('app fn' , name);
+
+// const [resourceType , setResourceType] = React.useState('posts')
+
+
+
+
+// React.useEffect(()=>{
+//   console.log('effect call')
+
+//   return ()=>{
+//     console.log('effect return callled');
+//   }
+// },[resourceType])
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <>
+          
+            {/* <button onClick={()=>setResourceType('posts')}>Posts</button>
+            <button onClick={()=>setResourceType('users')}>Users</button>
+            <button onClick={()=>setResourceType('comments')}>Comments</button>
+            <h1>{resourceType}</h1> */}
+
+
+
+            {/* hello there */}
+            
+            
+            {/* <UseMemo/> */}
+            <ThemeProvider >
+                <UseContext></UseContext>
+            </ThemeProvider>
+                <UseRef name={name} setName={setName}/>
+              {/* <StateAndEffect /> */}
+
+              <input  value={name} onChange={(e)=>setName(e.target.value)} placeholder='app input'/>
+
+
+    </>
   );
+
+
 }
 
 export default App;
