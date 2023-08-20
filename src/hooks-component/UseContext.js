@@ -1,5 +1,5 @@
 import React from 'react'
-import { ThemeProvider, useTheme , useThemeUpdate } from "./ThemeContext";
+import {  useTheme , useThemeUpdate } from "./ThemeContext";
 export default function UseContext() {
     
     const darkTheme = useTheme();

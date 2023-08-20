@@ -5,6 +5,9 @@ import React from 'react';
 import UseRef from './hooks-component/UseRef';
 import UseContext from './hooks-component/UseContext';
 import { ThemeProvider } from './hooks-component/ThemeContext';
+import UseReducer from './hooks-component/UseReducer';
+import UseReducer2 from './hooks-component/UseReducer2';
+import UseCallback from './hooks-component/UseCallback';
 
 // export const ThemeContext  = React.createContext();
 
@@ -50,10 +53,15 @@ console.log('app fn' , name);
                 <UseContext></UseContext>
             </ThemeProvider>
                 <UseRef name={name} setName={setName}/>
+                  <input  value={name} onChange={(e)=>setName(e.target.value)} placeholder='app input'/>
+                
+                <UseReducer/>
+                <UseReducer2/>
               {/* <StateAndEffect /> */}
 
-              <input  value={name} onChange={(e)=>setName(e.target.value)} placeholder='app input'/>
 
+
+              <UseCallback/>
 
     </>
   );
